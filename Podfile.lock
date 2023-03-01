@@ -1,0 +1,26 @@
+PODS:
+  - KeyboardObserving (0.3.0)
+  - Realm (10.35.1):
+    - Realm/Headers (= 10.35.1)
+  - Realm/Headers (10.35.1)
+  - RealmSwift (10.35.1):
+    - Realm (= 10.35.1)
+
+DEPENDENCIES:
+  - KeyboardObserving
+  - RealmSwift
+
+SPEC REPOS:
+  trunk:
+    - KeyboardObserving
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  KeyboardObserving: 0e3089bfd76cd10cd49f28532450e70b16c239c3
+  Realm: ee5a67274a2c338dec50f5e01a811b6b8d657a10
+  RealmSwift: 82f822142caa1e6ab96d3ea30bc83233e3d78ea3
+
+PODFILE CHECKSUM: 6e46bf0b234121ee2552d91a061b0c1bb178e808
+
+COCOAPODS: 1.11.3

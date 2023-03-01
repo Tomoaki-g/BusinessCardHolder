@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7CBF0B89-A160-4C42-A475-1A8BECD80088"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1825B369-4C53-49F7-81F8-AE25B85D5508"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BusinessCardHolder/CardView/CardListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96381B45-FB38-4C91-BBEB-0128ABA78ED9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BusinessCardHolder/CameraViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70EDA646-9683-4B47-A686-2B1A98F8DE75"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BusinessCardHolder/Models/CardData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "saveData(id:name:image:date:note:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "70EDA646-9683-4B47-A686-2B1A98F8DE75 - 309ad528c2093fd6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in BusinessCardHolder.CardData.saveData(id: Swift.String, name: Swift.String, image: Swift.Optional&lt;__C.UIImage&gt;, date: Foundation.Date, note: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "BusinessCardHolder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takemoto/workspace/ios/BusinessCardHolder/BusinessCardHolder/BusinessCardHolder/Models/CardData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "125">
+               </Location>
+               <Location
+                  uuid = "70EDA646-9683-4B47-A686-2B1A98F8DE75 - 309ad528c2093fd6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in BusinessCardHolder.CardData.saveData(id: Swift.String, name: Swift.String, image: Swift.Optional&lt;__C.UIImage&gt;, date: Foundation.Date, note: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "BusinessCardHolder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takemoto/workspace/ios/BusinessCardHolder/BusinessCardHolder/BusinessCardHolder/Models/CardData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "540">
+               </Location>
+               <Location
+                  uuid = "70EDA646-9683-4B47-A686-2B1A98F8DE75 - f21ad64f3d681d4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RealmSwift.Query&lt;BusinessCardHolder.CardData&gt;) -&gt; RealmSwift.Query&lt;Swift.Bool&gt; in closure #2 () -&gt; () in BusinessCardHolder.CardData.saveData(id: Swift.String, name: Swift.String, image: Swift.Optional&lt;__C.UIImage&gt;, date: Foundation.Date, note: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "BusinessCardHolder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/takemoto/workspace/ios/BusinessCardHolder/BusinessCardHolder/BusinessCardHolder/Models/CardData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "47">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

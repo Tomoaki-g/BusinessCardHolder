@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		51004CB1297A9023001CEA6C /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51004CB0297A9023001CEA6C /* CameraView.swift */; };
+		5141D8FC299A14A500A46C23 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141D8FB299A14A500A46C23 /* Keyboard.swift */; };
+		5141D8FE299A150900A46C23 /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141D8FD299A150900A46C23 /* Convert.swift */; };
+		51649C232976893600E2FEEE /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51649C222976893600E2FEEE /* CardEditView.swift */; };
+		51768C3B2978F550005660AE /* CardEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51768C3A2978F54F005660AE /* CardEditData.swift */; };
+		51768C3D29795394005660AE /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51768C3C29795394005660AE /* FloatingButton.swift */; };
+		517D6491297547C100E0747A /* BusinessCardHolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D6490297547C100E0747A /* BusinessCardHolderApp.swift */; };
+		517D6493297547C100E0747A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D6492297547C100E0747A /* ContentView.swift */; };
+		517D6495297547C600E0747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517D6494297547C600E0747A /* Assets.xcassets */; };
+		517D6498297547C600E0747A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517D6497297547C600E0747A /* Preview Assets.xcassets */; };
+		517D649F2975598100E0747A /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D649E2975598100E0747A /* LaunchView.swift */; };
+		517D64A1297559F900E0747A /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D64A0297559F900E0747A /* CardListView.swift */; };
+		517D64A329755BE400E0747A /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D64A229755BE400E0747A /* CardDetailView.swift */; };
+		517D64A529755D0800E0747A /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D64A429755D0800E0747A /* CardData.swift */; };
+		9849E6F45A4205503BA7E000 /* Pods_BusinessCardHolder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A507ED6659C1E5AFD2F6F3 /* Pods_BusinessCardHolder.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		397E8A318A39D85FC8344265 /* Pods-BusinessCardHolder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessCardHolder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessCardHolder/Pods-BusinessCardHolder.debug.xcconfig"; sourceTree = "<group>"; };
+		51004CB0297A9023001CEA6C /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		51301E3129AF389500456B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5141D8FB299A14A500A46C23 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		5141D8FD299A150900A46C23 /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
+		51649C222976893600E2FEEE /* CardEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditView.swift; sourceTree = "<group>"; };
+		51768C3A2978F54F005660AE /* CardEditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditData.swift; sourceTree = "<group>"; };
+		51768C3C29795394005660AE /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		517D648D297547C100E0747A /* BusinessCardHolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCardHolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		517D6490297547C100E0747A /* BusinessCardHolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardHolderApp.swift; sourceTree = "<group>"; };
+		517D6492297547C100E0747A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		517D6494297547C600E0747A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		517D6497297547C600E0747A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		517D649E2975598100E0747A /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		517D64A0297559F900E0747A /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
+		517D64A229755BE400E0747A /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		517D64A429755D0800E0747A /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		C874B52BFA62EA7AE2176454 /* Pods-BusinessCardHolder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessCardHolder.release.xcconfig"; path = "Target Support Files/Pods-BusinessCardHolder/Pods-BusinessCardHolder.release.xcconfig"; sourceTree = "<group>"; };
+		F6A507ED6659C1E5AFD2F6F3 /* Pods_BusinessCardHolder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessCardHolder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		517D648A297547C100E0747A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9849E6F45A4205503BA7E000 /* Pods_BusinessCardHolder.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30197437C6729BF295966A8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6A507ED6659C1E5AFD2F6F3 /* Pods_BusinessCardHolder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51649C21297688F800E2FEEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				517D64A429755D0800E0747A /* CardData.swift */,
+				5141D8FD299A150900A46C23 /* Convert.swift */,
+				5141D8FB299A14A500A46C23 /* Keyboard.swift */,
+				51768C3A2978F54F005660AE /* CardEditData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		51649C2429768F9A00E2FEEE /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				517D64A229755BE400E0747A /* CardDetailView.swift */,
+				51649C222976893600E2FEEE /* CardEditView.swift */,
+				517D64A0297559F900E0747A /* CardListView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		517D6484297547C100E0747A = {
+			isa = PBXGroup;
+			children = (
+				517D648F297547C100E0747A /* BusinessCardHolder */,
+				517D648E297547C100E0747A /* Products */,
+				6317C3439FF1A9BE544ECC1B /* Pods */,
+				30197437C6729BF295966A8E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		517D648E297547C100E0747A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				517D648D297547C100E0747A /* BusinessCardHolder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		517D648F297547C100E0747A /* BusinessCardHolder */ = {
+			isa = PBXGroup;
+			children = (
+				51301E3129AF389500456B8F /* Info.plist */,
+				51649C21297688F800E2FEEE /* Models */,
+				517D6490297547C100E0747A /* BusinessCardHolderApp.swift */,
+				517D6492297547C100E0747A /* ContentView.swift */,
+				517D6494297547C600E0747A /* Assets.xcassets */,
+				517D649E2975598100E0747A /* LaunchView.swift */,
+				51768C3C29795394005660AE /* FloatingButton.swift */,
+				51004CB0297A9023001CEA6C /* CameraView.swift */,
+				51649C2429768F9A00E2FEEE /* CardView */,
+				517D6496297547C600E0747A /* Preview Content */,
+			);
+			path = BusinessCardHolder;
+			sourceTree = "<group>";
+		};
+		517D6496297547C600E0747A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				517D6497297547C600E0747A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6317C3439FF1A9BE544ECC1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				397E8A318A39D85FC8344265 /* Pods-BusinessCardHolder.debug.xcconfig */,
+				C874B52BFA62EA7AE2176454 /* Pods-BusinessCardHolder.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		517D648C297547C100E0747A /* BusinessCardHolder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 517D649B297547C600E0747A /* Build configuration list for PBXNativeTarget "BusinessCardHolder" */;
+			buildPhases = (
+				FCAD6D9E95AC93DA9C158540 /* [CP] Check Pods Manifest.lock */,
+				517D6489297547C100E0747A /* Sources */,
+				517D648A297547C100E0747A /* Frameworks */,
+				517D648B297547C100E0747A /* Resources */,
+				C7641C9243EC3341E41AA20E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BusinessCardHolder;
+			productName = BusinessCardHolder;
+			productReference = 517D648D297547C100E0747A /* BusinessCardHolder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		517D6485297547C100E0747A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					517D648C297547C100E0747A = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 517D6488297547C100E0747A /* Build configuration list for PBXProject "BusinessCardHolder" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 517D6484297547C100E0747A;
+			productRefGroup = 517D648E297547C100E0747A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				517D648C297547C100E0747A /* BusinessCardHolder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		517D648B297547C100E0747A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				517D6498297547C600E0747A /* Preview Assets.xcassets in Resources */,
+				517D6495297547C600E0747A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C7641C9243EC3341E41AA20E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusinessCardHolder/Pods-BusinessCardHolder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusinessCardHolder/Pods-BusinessCardHolder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BusinessCardHolder/Pods-BusinessCardHolder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCAD6D9E95AC93DA9C158540 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BusinessCardHolder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		517D6489297547C100E0747A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				517D6493297547C100E0747A /* ContentView.swift in Sources */,
+				5141D8FE299A150900A46C23 /* Convert.swift in Sources */,
+				51649C232976893600E2FEEE /* CardEditView.swift in Sources */,
+				51768C3D29795394005660AE /* FloatingButton.swift in Sources */,
+				517D649F2975598100E0747A /* LaunchView.swift in Sources */,
+				5141D8FC299A14A500A46C23 /* Keyboard.swift in Sources */,
+				517D64A329755BE400E0747A /* CardDetailView.swift in Sources */,
+				517D64A529755D0800E0747A /* CardData.swift in Sources */,
+				51004CB1297A9023001CEA6C /* CameraView.swift in Sources */,
+				517D64A1297559F900E0747A /* CardListView.swift in Sources */,
+				517D6491297547C100E0747A /* BusinessCardHolderApp.swift in Sources */,
+				51768C3B2978F550005660AE /* CardEditData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		517D6499297547C600E0747A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		517D649A297547C600E0747A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		517D649C297547C600E0747A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 397E8A318A39D85FC8344265 /* Pods-BusinessCardHolder.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BusinessCardHolder/Preview Content\"";
+				DEVELOPMENT_TEAM = 883T443D6K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusinessCardHolder/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "カメラにアクセスしますか？";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "カメラロールにアクセスしますか？";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BusinessCardHolder.BusinessCardHolder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		517D649D297547C600E0747A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C874B52BFA62EA7AE2176454 /* Pods-BusinessCardHolder.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BusinessCardHolder/Preview Content\"";
+				DEVELOPMENT_TEAM = 883T443D6K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BusinessCardHolder/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "カメラにアクセスしますか？";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "カメラロールにアクセスしますか？";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BusinessCardHolder.BusinessCardHolder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		517D6488297547C100E0747A /* Build configuration list for PBXProject "BusinessCardHolder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				517D6499297547C600E0747A /* Debug */,
+				517D649A297547C600E0747A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		517D649B297547C600E0747A /* Build configuration list for PBXNativeTarget "BusinessCardHolder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				517D649C297547C600E0747A /* Debug */,
+				517D649D297547C600E0747A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 517D6485297547C100E0747A /* Project object */;
+}

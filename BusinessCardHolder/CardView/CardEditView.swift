@@ -14,6 +14,7 @@ struct CardEditView: View {
     @State var source: UIImagePickerController.SourceType
     @State var isActive: Bool
     @State var showDialog: Bool = false
+    @State var isFloatingButton: Bool
     @FocusState var focus: Bool
     let cardData: CardData
 
@@ -142,11 +143,20 @@ struct CardEditView: View {
             NotificationCenter.default.addObserver(self, selector: #selector(KeyboardResponder.keyboardWillShow), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(KeyboardResponder.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         }
+        .onDisappear {
+            if isFloatingButton {
+                dispCardData.id = ""
+                dispCardData.name = ""
+                dispCardData.image = UIImage(named: "noimage")!.jpegData(compressionQuality: 1.0)!
+                dispCardData.date = Date()
+                dispCardData.note = ""
+            }
+        }
     }
 }
 
 struct CardEditView_Previews: PreviewProvider {
     static var previews: some View {
-        CardEditView(dispCardData: CardData.sampleData[0], source: .photoLibrary, isActive: false, cardData: CardData.sampleData[0])
+        CardEditView(dispCardData: CardData.sampleData[0], source: .photoLibrary, isActive: false, isFloatingButton: false, cardData: CardData.sampleData[0])
     }
 }

@@ -57,7 +57,7 @@ struct CardDetailView: View {
         .navigationTitle("")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(destination: CardEditView(dispCardData: dispCardData, source: .photoLibrary, isActive: false, cardData: dispCardData)
+                NavigationLink(destination: CardEditView(dispCardData: dispCardData, source: .photoLibrary, isActive: false, isFloatingButton: false, cardData: dispCardData)
                     .onAppear {
                         didTapBackButton = false
                     }

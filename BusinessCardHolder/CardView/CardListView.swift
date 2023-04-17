@@ -35,17 +35,13 @@ struct CardListView: View {
                                         .font(.headline)
                                     Text(data.name)
                                         .font(.title2)
-                                        .padding(.leading, 10)
-
-                                    Spacer()
+                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 15.0, trailing: 0))
 
                                     Text("Date: ")
                                         .font(.headline)
                                     Text(dateToString(date: data.date))
                                         .font(.title2)
-                                        .padding(.leading, 10)
-
-                                    Spacer()
+                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 15.0, trailing: 0))
 
                                     Text("Note: ")
                                         .font(.headline)

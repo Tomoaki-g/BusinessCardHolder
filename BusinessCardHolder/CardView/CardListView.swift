@@ -10,6 +10,8 @@ struct CardListView: View {
     @State var isFloatingButtonHidden = false
     @State var newImage = UIImage()
     @State var dispCardData: [CardData]
+    @State private var selectedOrder = "new"
+    let order = ["new", "old"]
     let cardData: CardData
     
     var body: some View {
@@ -65,11 +67,33 @@ struct CardListView: View {
                     FloatingButton()
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Menu {
+                        Picker("", selection: $selectedOrder) {
+                            ForEach(order, id: \.self) { value in
+                                Text(value)
+                            }
+                        }
+                        .pickerStyle(.inline)
+                        .onChange(of: selectedOrder) { newValue in
+                            if newValue == "new" {
+                                dispCardData.sort(by: {$0.date > $1.date})
+                            } else if newValue == "old" {
+                                dispCardData.sort(by: {$0.date < $1.date})
+                            }
+                        }
+                    } label: {
+                        Label("", systemImage: "arrow.up.arrow.down")
+                    }
+                }
+            }
             .onAppear {
                 isFloatingButtonHidden = false
                 let realm = try? Realm()
                 if let data = realm?.objects(CardData.self) {
                     dispCardData = makeArrayData(data: data)
+                    dispCardData.sort(by: {$0.date > $1.date})
                 } else {
                     dispCardData = []
                 }

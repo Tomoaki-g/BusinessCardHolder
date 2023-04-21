@@ -11,7 +11,7 @@ struct CardListView: View {
     @State var newImage = UIImage()
     @State var dispCardData: [CardData]
     @State var searchText: String
-    @State private var selectedOrder = "new"
+    @State var selectedOrder = "new"
     let order = ["new", "old"]
     let cardData: CardData
     
@@ -71,21 +71,16 @@ struct CardListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
-                        Picker("", selection: $selectedOrder) {
-                            ForEach(order, id: \.self) { value in
-                                Text(value)
-                            }
-                        }
-                        .pickerStyle(.inline)
-                        .onChange(of: selectedOrder) { newValue in
-                            if newValue == "new" {
-                                dispCardData.sort(by: {$0.date > $1.date})
-                            } else if newValue == "old" {
-                                dispCardData.sort(by: {$0.date < $1.date})
-                            }
-                        }
+                        PickOrder(selectedOrder: $selectedOrder)
                     } label: {
                         Label("", systemImage: "arrow.up.arrow.down")
+                    }
+                    .onChange(of: selectedOrder) { newValue in
+                        if newValue == "new" {
+                            dispCardData.sort(by: {$0.date > $1.date})
+                        } else if newValue == "old" {
+                            dispCardData.sort(by: {$0.date < $1.date})
+                        }
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -102,7 +97,11 @@ struct CardListView: View {
                 let realm = try? Realm()
                 if let data = realm?.objects(CardData.self) {
                     dispCardData = makeArrayData(data: data)
-                    dispCardData.sort(by: {$0.date > $1.date})
+                    if selectedOrder == "new" {
+                        dispCardData.sort(by: {$0.date > $1.date})
+                    } else if selectedOrder == "old" {
+                        dispCardData.sort(by: {$0.date < $1.date})
+                    }
                 } else {
                     dispCardData = []
                 }
@@ -110,6 +109,21 @@ struct CardListView: View {
             .onDisappear {
                 searchText = ""
             }
+        }
+    }
+}
+
+struct PickOrder: View {
+    let order = ["new", "old"]
+    @Binding var selectedOrder: String
+    var body: some View {
+        VStack {
+            Picker("", selection: $selectedOrder) {
+                ForEach(order, id: \.self) { newValue in
+                    Text(newValue)
+                }
+            }
+            .pickerStyle(.inline)
         }
     }
 }

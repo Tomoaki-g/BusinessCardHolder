@@ -73,6 +73,18 @@ struct CardEditView: View {
                             .padding(.all, 5)
                             .border(Color.gray, width: 1)
                             .focused(self.$focus)
+                            .toolbar {
+                                ToolbarItem(placement: .keyboard) {
+                                    Spacer()
+                                }
+                                ToolbarItem(placement: .keyboard) {
+                                    Button("Done") {
+                                        UIApplication.shared.endEditing()
+                                        dispCardData.name = dispCardData.name.removingWhiteSpace()
+                                        self.focus = false
+                                    }
+                                }
+                            }
                     }
 
                     VStack(alignment: .leading) {
@@ -103,7 +115,6 @@ struct CardEditView: View {
                                 ToolbarItem(placement: .keyboard) {
                                     Button("Done") {
                                         UIApplication.shared.endEditing()
-                                        dispCardData.name = dispCardData.name.removingWhiteSpace()
                                         dispCardData.note = dispCardData.note.removingWhiteSpace()
                                         self.focus = false
                                     }
@@ -115,9 +126,15 @@ struct CardEditView: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
+                    UIApplication.shared.endEditing()
+                    dispCardData.name = dispCardData.name.removingWhiteSpace()
+                    dispCardData.note = dispCardData.note.removingWhiteSpace()
+                    self.focus = false
+                    
                     if dispCardData.name != "" {
                         let result = cardData.saveData(id: dispCardData.id, name: dispCardData.name, image: UIImage(data: dispCardData.image), date: dispCardData.date, note: dispCardData.note)
                         if result {

@@ -55,6 +55,7 @@ struct CardDetailView: View {
         }
         .padding()
         .navigationTitle("")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: CardEditView(dispCardData: dispCardData, source: .photoLibrary, isActive: false, isFloatingButton: false, cardData: dispCardData)
@@ -93,6 +94,9 @@ struct CardDetailView: View {
                     Text("Are you sure you want to delete this card?")
                 }
             }
+        }
+        .onAppear {
+            UIApplication.shared.endEditing()
         }
         .onDisappear {
             if didTapBackButton {

@@ -11,6 +11,7 @@
 		5141D8FC299A14A500A46C23 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141D8FB299A14A500A46C23 /* Keyboard.swift */; };
 		5141D8FE299A150900A46C23 /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141D8FD299A150900A46C23 /* Convert.swift */; };
 		51649C232976893600E2FEEE /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51649C222976893600E2FEEE /* CardEditView.swift */; };
+		5172A67629EFC65D00F3E98B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172A67529EFC65D00F3E98B /* SearchView.swift */; };
 		51768C3B2978F550005660AE /* CardEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51768C3A2978F54F005660AE /* CardEditData.swift */; };
 		51768C3D29795394005660AE /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51768C3C29795394005660AE /* FloatingButton.swift */; };
 		517D6491297547C100E0747A /* BusinessCardHolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D6490297547C100E0747A /* BusinessCardHolderApp.swift */; };
@@ -31,6 +32,7 @@
 		5141D8FB299A14A500A46C23 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		5141D8FD299A150900A46C23 /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 		51649C222976893600E2FEEE /* CardEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditView.swift; sourceTree = "<group>"; };
+		5172A67529EFC65D00F3E98B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		51768C3A2978F54F005660AE /* CardEditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditData.swift; sourceTree = "<group>"; };
 		51768C3C29795394005660AE /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		517D648D297547C100E0747A /* BusinessCardHolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCardHolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				517D6494297547C600E0747A /* Assets.xcassets */,
 				517D649E2975598100E0747A /* LaunchView.swift */,
 				51768C3C29795394005660AE /* FloatingButton.swift */,
+				5172A67529EFC65D00F3E98B /* SearchView.swift */,
 				51004CB0297A9023001CEA6C /* CameraView.swift */,
 				51649C2429768F9A00E2FEEE /* CardView */,
 				517D6496297547C600E0747A /* Preview Content */,
@@ -261,6 +264,7 @@
 				5141D8FC299A14A500A46C23 /* Keyboard.swift in Sources */,
 				517D64A329755BE400E0747A /* CardDetailView.swift in Sources */,
 				517D64A529755D0800E0747A /* CardData.swift in Sources */,
+				5172A67629EFC65D00F3E98B /* SearchView.swift in Sources */,
 				51004CB1297A9023001CEA6C /* CameraView.swift in Sources */,
 				517D64A1297559F900E0747A /* CardListView.swift in Sources */,
 				517D6491297547C100E0747A /* BusinessCardHolderApp.swift in Sources */,
@@ -394,7 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BusinessCardHolder/Preview Content\"";
-				DEVELOPMENT_TEAM = 883T443D6K;
+				DEVELOPMENT_TEAM = 53827U2REE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BusinessCardHolder/Info.plist;
@@ -427,7 +431,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BusinessCardHolder/Preview Content\"";
-				DEVELOPMENT_TEAM = 883T443D6K;
+				DEVELOPMENT_TEAM = 53827U2REE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BusinessCardHolder/Info.plist;

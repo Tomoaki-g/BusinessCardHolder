@@ -10,6 +10,7 @@ struct CardListView: View {
     @State var isFloatingButtonHidden = false
     @State var newImage = UIImage()
     @State var dispCardData: [CardData]
+    @State var searchText: String
     @State private var selectedOrder = "new"
     let order = ["new", "old"]
     let cardData: CardData
@@ -68,7 +69,7 @@ struct CardListView: View {
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing){
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
                         Picker("", selection: $selectedOrder) {
                             ForEach(order, id: \.self) { value in
@@ -87,8 +88,16 @@ struct CardListView: View {
                         Label("", systemImage: "arrow.up.arrow.down")
                     }
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        SearchView(searchText: searchText, dispCardData: dispCardData)
+                    } label: {
+                        Label("", systemImage: "magnifyingglass")
+                    }
+                }
             }
             .onAppear {
+                UIApplication.shared.endEditing()
                 isFloatingButtonHidden = false
                 let realm = try? Realm()
                 if let data = realm?.objects(CardData.self) {
@@ -98,12 +107,15 @@ struct CardListView: View {
                     dispCardData = []
                 }
             }
+            .onDisappear {
+                searchText = ""
+            }
         }
     }
 }
 
 struct CardListView_Previews: PreviewProvider {
     static var previews: some View {
-        CardListView(dispCardData: CardData.sampleData, cardData: CardData.sampleData[0])
+        CardListView(dispCardData: CardData.sampleData, searchText: "", cardData: CardData.sampleData[0])
     }
 }

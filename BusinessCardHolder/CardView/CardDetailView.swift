@@ -98,15 +98,6 @@ struct CardDetailView: View {
         .onAppear {
             UIApplication.shared.endEditing()
         }
-        .onDisappear {
-            if didTapBackButton {
-                dispCardData.id = ""
-                dispCardData.name = ""
-                dispCardData.image = UIImage(named: "noimage")!.jpegData(compressionQuality: 1.0)!
-                dispCardData.date = Date()
-                dispCardData.note = ""
-            }
-        }
     }
 }
 

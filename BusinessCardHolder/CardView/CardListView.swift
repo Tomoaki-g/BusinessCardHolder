@@ -68,6 +68,7 @@ struct CardListView: View {
                     FloatingButton()
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {

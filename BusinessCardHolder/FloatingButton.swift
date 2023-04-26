@@ -6,8 +6,8 @@
 import SwiftUI
 
 struct FloatingButton: View {
-    @State var isActive = false
-    @State var isFloatingButton = false
+    @State private var isActive = false
+    @State private var isFloatingButton = false
 
     var body: some View {
         VStack {
@@ -15,7 +15,7 @@ struct FloatingButton: View {
             HStack {
                 Spacer()
                 NavigationLink(
-                    destination: CardEditView(dispCardData: CardData.init(), source: .photoLibrary, isActive: false, isFloatingButton: true, cardData: CardData.init()),
+                    destination: CardEditView(dispCardData: CardData.init(), isFloatingButton: true, cardData: CardData.init()),
                     isActive: $isActive
                 ) {
                         Button(

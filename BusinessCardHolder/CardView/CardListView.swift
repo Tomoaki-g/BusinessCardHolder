@@ -8,11 +8,11 @@ import RealmSwift
 
 struct CardListView: View {
     @State var isFloatingButtonHidden = false
-    @State var newImage = UIImage()
+    @State private var newImage = UIImage()
     @State var dispCardData: [CardData]
     @State var searchText: String
-    @State var selectedOrder = "new"
-    let order = ["new", "old"]
+    @State private var selectedOrder = "new"
+    private let order = ["new", "old"]
     let cardData: CardData
     
     var body: some View {

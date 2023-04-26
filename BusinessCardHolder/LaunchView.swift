@@ -7,8 +7,8 @@ import UIKit
 import SwiftUI
 
 struct LaunchView: View {
-    @State var isAnimating = false
-    @State var isShowingCameraRoll = false
+    @State private var isAnimating = false
+    @State private var isShowingCameraRoll = false
     @State private var image: UIImage?
     
     var body: some View {

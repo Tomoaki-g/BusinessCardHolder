@@ -10,10 +10,10 @@ struct CardEditView: View {
     @Environment(\.presentationMode) var presentation
     @Environment(\.dismiss) var dismiss
     @State var dispCardData: CardData
-    @State var selectedDate = Date()
-    @State var source: UIImagePickerController.SourceType
-    @State var isActive: Bool
-    @State var showDialog: Bool = false
+    @State private var selectedDate = Date()
+    @State private var source: UIImagePickerController.SourceType = .photoLibrary
+    @State private var isActive: Bool = false
+    @State private var showDialog: Bool = false
     @State var isFloatingButton: Bool
     @FocusState var focus: Bool
     let cardData: CardData
@@ -174,6 +174,6 @@ struct CardEditView: View {
 
 struct CardEditView_Previews: PreviewProvider {
     static var previews: some View {
-        CardEditView(dispCardData: CardData.sampleData[0], source: .photoLibrary, isActive: false, isFloatingButton: false, cardData: CardData.sampleData[0])
+        CardEditView(dispCardData: CardData.sampleData[0], isFloatingButton: false, cardData: CardData.sampleData[0])
     }
 }

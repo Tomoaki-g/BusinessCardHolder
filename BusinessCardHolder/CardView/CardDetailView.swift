@@ -10,7 +10,7 @@ struct CardDetailView: View {
     @Environment(\.presentationMode) var presentation
     @State private var showAlert = false
     @State private var didTapBackButton = true
-    @State var image = UIImage()
+    @State private var image = UIImage()
     @State var dispCardData: CardData
 
     var body: some View {
@@ -58,7 +58,7 @@ struct CardDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(destination: CardEditView(dispCardData: dispCardData, source: .photoLibrary, isActive: false, isFloatingButton: false, cardData: dispCardData)
+                NavigationLink(destination: CardEditView(dispCardData: dispCardData, isFloatingButton: false, cardData: dispCardData)
                     .onAppear {
                         didTapBackButton = false
                     }

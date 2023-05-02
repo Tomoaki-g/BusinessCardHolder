@@ -9,7 +9,7 @@ import Combine
 struct CardEditView: View {
     @Environment(\.presentationMode) var presentation
     @Environment(\.dismiss) var dismiss
-    @State var dispCardData: CardData
+    @Binding var dispCardData: CardData
     @State private var selectedDate = Date()
     @State private var source: UIImagePickerController.SourceType = .photoLibrary
     @State private var isActive: Bool = false
@@ -68,10 +68,11 @@ struct CardEditView: View {
                         Text("Name: ")
                             .font(.title)
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: -3, trailing: 0))
-                        TextField("",text: $dispCardData.name)
+                        TextEditor(text: $dispCardData.name)
                             .font(.system(size: 30))
                             .padding(.all, 5)
                             .border(Color.gray, width: 1)
+                            .frame(minHeight: 30)
                             .focused(self.$focus)
                     }
 
@@ -105,8 +106,6 @@ struct CardEditView: View {
                     ToolbarItem(placement: .keyboard) {
                         Button("Done") {
                             UIApplication.shared.endEditing()
-                            dispCardData.name = dispCardData.name.removingWhiteSpace()
-                            dispCardData.note = dispCardData.note.removingWhiteSpace()
                             self.focus = false
                         }
                     }
@@ -120,11 +119,11 @@ struct CardEditView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
                     UIApplication.shared.endEditing()
-                    dispCardData.name = dispCardData.name.removingWhiteSpace()
-                    dispCardData.note = dispCardData.note.removingWhiteSpace()
                     self.focus = false
                     
                     if dispCardData.name != "" {
+                        print("name: \(dispCardData.name)")
+                        print("$name: \($dispCardData.name)")
                         let result = cardData.saveData(id: dispCardData.id, name: dispCardData.name, image: UIImage(data: dispCardData.image), date: dispCardData.date, note: dispCardData.note)
                         if result {
                             self.presentation.wrappedValue.dismiss()
@@ -163,6 +162,6 @@ struct CardEditView: View {
 
 struct CardEditView_Previews: PreviewProvider {
     static var previews: some View {
-        CardEditView(dispCardData: CardData.sampleData[0], isFloatingButton: false, cardData: CardData.sampleData[0])
+        CardEditView(dispCardData: .constant(CardData.sampleData[0]), isFloatingButton: false, cardData: CardData.sampleData[0])
     }
 }

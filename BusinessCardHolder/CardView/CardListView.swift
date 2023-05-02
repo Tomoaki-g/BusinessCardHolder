@@ -38,13 +38,13 @@ struct CardListView: View {
                                         .font(.headline)
                                     Text(data.name)
                                         .font(.title2)
-                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 15.0, trailing: 0))
+                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 15, trailing: 0))
 
                                     Text("Date: ")
                                         .font(.headline)
                                     Text(dateToString(date: data.date))
                                         .font(.title2)
-                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 15.0, trailing: 0))
+                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 15, trailing: 0))
 
                                     Text("Note: ")
                                         .font(.headline)
@@ -60,7 +60,6 @@ struct CardListView: View {
                         .contentShape(Rectangle())
                     }
                 }
-                .navigationTitle("")
                 
                 if isFloatingButtonHidden {
                     FloatingButton().hidden()
@@ -68,6 +67,7 @@ struct CardListView: View {
                     FloatingButton()
                 }
             }
+            .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

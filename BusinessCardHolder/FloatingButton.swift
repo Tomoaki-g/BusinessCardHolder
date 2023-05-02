@@ -15,7 +15,7 @@ struct FloatingButton: View {
             HStack {
                 Spacer()
                 NavigationLink(
-                    destination: CardEditView(dispCardData: CardData.init(), isFloatingButton: true, cardData: CardData.init()),
+                    destination: CardEditView(dispCardData: .constant(CardData(id: UUID().uuidString, name: "", image: UIImage(named: "noimage")!.jpegData(compressionQuality: 1.0)!, date: Date(), note: "")), isFloatingButton: true, cardData: CardData.init()),
                     isActive: $isActive
                 ) {
                         Button(

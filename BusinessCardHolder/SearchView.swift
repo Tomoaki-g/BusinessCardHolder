@@ -48,13 +48,13 @@ struct SearchView: View {
                                     .font(.headline)
                                 Text(data.name)
                                     .font(.title2)
-                                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 15.0, trailing: 0))
+                                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 15, trailing: 0))
 
                                 Text("Date: ")
                                     .font(.headline)
                                 Text(dateToString(date: data.date))
                                     .font(.title2)
-                                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 15.0, trailing: 0))
+                                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 15, trailing: 0))
 
                                 Text("Note: ")
                                     .font(.headline)
@@ -73,7 +73,7 @@ struct SearchView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .principal){
+            ToolbarItem(placement: .principal) {
                 TextField("Search", text: $searchText)
                     .frame(maxWidth: 250)
                     .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))

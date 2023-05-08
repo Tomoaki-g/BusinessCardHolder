@@ -59,6 +59,16 @@ struct CardListView: View {
                         }
                         .contentShape(Rectangle())
                     }
+                    .onDelete { (offsets) in
+                        offsets.forEach { offset in
+                            dispCardData[offset].deleteData(cardData: dispCardData[offset])
+                        }
+                        dispCardData.remove(atOffsets: offsets)
+                        let realm = try? Realm()
+                        if let data = realm?.objects(CardData.self) {
+                            dispCardData = makeArrayData(data: data)
+                        }
+                    }
                 }
                 
                 if isFloatingButtonHidden {

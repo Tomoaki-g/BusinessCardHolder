@@ -72,7 +72,7 @@ struct CardEditView: View {
                             .font(.system(size: 30))
                             .padding(.all, 5)
                             .border(Color.gray, width: 1)
-                            .frame(minHeight: 30)
+                            .frame(height: 50)
                             .focused(self.$focus)
                     }
 

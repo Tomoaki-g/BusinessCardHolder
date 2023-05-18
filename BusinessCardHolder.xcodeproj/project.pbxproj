@@ -10,6 +10,7 @@
 		51004CB1297A9023001CEA6C /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51004CB0297A9023001CEA6C /* CameraView.swift */; };
 		5141D8FC299A14A500A46C23 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141D8FB299A14A500A46C23 /* Keyboard.swift */; };
 		5141D8FE299A150900A46C23 /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141D8FD299A150900A46C23 /* Convert.swift */; };
+		515634432A1390E40089563F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515634422A1390E40089563F /* Article.swift */; };
 		51649C232976893600E2FEEE /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51649C222976893600E2FEEE /* CardEditView.swift */; };
 		5172A67629EFC65D00F3E98B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172A67529EFC65D00F3E98B /* SearchView.swift */; };
 		51768C3B2978F550005660AE /* CardEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51768C3A2978F54F005660AE /* CardEditData.swift */; };
@@ -31,6 +32,7 @@
 		51301E3129AF389500456B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5141D8FB299A14A500A46C23 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		5141D8FD299A150900A46C23 /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
+		515634422A1390E40089563F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		51649C222976893600E2FEEE /* CardEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditView.swift; sourceTree = "<group>"; };
 		5172A67529EFC65D00F3E98B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		51768C3A2978F54F005660AE /* CardEditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditData.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				517D64A429755D0800E0747A /* CardData.swift */,
 				5141D8FD299A150900A46C23 /* Convert.swift */,
+				515634422A1390E40089563F /* Article.swift */,
 				5141D8FB299A14A500A46C23 /* Keyboard.swift */,
 				51768C3A2978F54F005660AE /* CardEditData.swift */,
 			);
@@ -269,6 +272,7 @@
 				517D64A1297559F900E0747A /* CardListView.swift in Sources */,
 				517D6491297547C100E0747A /* BusinessCardHolderApp.swift in Sources */,
 				51768C3B2978F550005660AE /* CardEditData.swift in Sources */,
+				515634432A1390E40089563F /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            CardListView(dispCardData: [], searchText: "", cardData: CardData(id: UUID().uuidString, name: "", image: UIImage(named: "noimage")!.jpegData(compressionQuality: 1.0)!, date: Date(), note: ""))
+            CardListView(dispCardData: [], searchText: "", cardData: CardData(id: UUID().uuidString, name: "", image: UIImage(named: "noimage")!.jpegData(compressionQuality: 1.0)!, date: Date(), note: ""), article: Article.init(title: "", url: ""))
             LaunchView()
                 .opacity(isHidden ? 0 : 1)
                 .onAppear() {

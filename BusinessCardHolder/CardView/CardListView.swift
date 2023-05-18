@@ -8,65 +8,113 @@ import RealmSwift
 
 struct CardListView: View {
     @State var isFloatingButtonHidden = false
-    @State private var newImage = UIImage()
     @State var dispCardData: [CardData]
     @State var searchText: String
+    @State private var newImage = UIImage()
+    @State private var news: [Article] = []
+    @State private var isShowingSafariView = false
+    @State private var safariURL: URL? = nil
+    @State private var currentNewsIndex = 0
     @State private var selectedOrder = "new"
     private let order = ["new", "old"]
+    private let newsTimerInterval: TimeInterval = 5
     let cardData: CardData
+    let article: Article
+
+    func fetchNews() {
+        article.getArticles { news in
+            DispatchQueue.main.async {
+                self.news = news
+                print("title: \(news[0].title)")
+            }
+        }
+    }
+    
+    func openSafariView(withURL url: URL) {
+        safariURL = url
+        isShowingSafariView = true
+    }
+    
+    var newsView: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 10) {
+                ForEach(news, id: \.title) { article in
+                    Button(action: {
+                        if let url = URL(string: article.url) {
+                            UIApplication.shared.open(url)
+                        }
+                    }) {
+                        Text(article.title)
+                            .font(.subheadline)
+                            .foregroundColor(.black)
+                            .lineLimit(1)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal, 10)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                    }
+                }
+            }
+            .padding(.horizontal)
+            .frame(height: 40)
+        }
+    }
     
     var body: some View {
         NavigationView {
             ZStack {
-                List {
-                    ForEach(dispCardData) { data in
-                        HStack {
-                            if let image = data.image {
-                                Image(uiImage: UIImage(data: image) ?? UIImage(named: "noimage")!)
-                                    .resizable()
-                                    .scaledToFit()
-                            } else {
-                                Image("noimage")
-                                    .resizable()
-                                    .scaledToFit()
-                            }
-                            
-                            NavigationLink(destination: CardDetailView(dispCardData: data)
-                                .onAppear { isFloatingButtonHidden = true }) {
-                                VStack(alignment: .leading) {
-                                    Text("Name: ")
-                                        .font(.headline)
-                                    Text(data.name)
-                                        .font(.title2)
-                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 15, trailing: 0))
-
-                                    Text("Date: ")
-                                        .font(.headline)
-                                    Text(dateToString(date: data.date))
-                                        .font(.title2)
-                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 15, trailing: 0))
-
-                                    Text("Note: ")
-                                        .font(.headline)
-                                    Text(data.note)
-                                        .font(.title2)
-                                        .padding(.leading, 10)
-
-                                    Spacer()
+                VStack {
+                    newsView
+                    List {
+                        ForEach(dispCardData) { data in
+                            HStack {
+                                if let image = data.image {
+                                    Image(uiImage: UIImage(data: image) ?? UIImage(named: "noimage")!)
+                                        .resizable()
+                                        .scaledToFit()
+                                } else {
+                                    Image("noimage")
+                                        .resizable()
+                                        .scaledToFit()
                                 }
-                                .padding(.vertical, 10)
+                                
+                                NavigationLink(destination: CardDetailView(dispCardData: data)
+                                    .onAppear { isFloatingButtonHidden = true }) {
+                                        VStack(alignment: .leading) {
+                                            Text("Name: ")
+                                                .font(.headline)
+                                            Text(data.name)
+                                                .font(.title2)
+                                                .padding(EdgeInsets(top: 0, leading: 10, bottom: 15, trailing: 0))
+                                            
+                                            Text("Date: ")
+                                                .font(.headline)
+                                            Text(dateToString(date: data.date))
+                                                .font(.title2)
+                                                .padding(EdgeInsets(top: 0, leading: 10, bottom: 15, trailing: 0))
+                                            
+                                            Text("Note: ")
+                                                .font(.headline)
+                                            Text(data.note)
+                                                .font(.title2)
+                                                .padding(.leading, 10)
+                                            
+                                            Spacer()
+                                        }
+                                        .padding(.vertical, 10)
+                                    }
                             }
+                            .contentShape(Rectangle())
                         }
-                        .contentShape(Rectangle())
-                    }
-                    .onDelete { (offsets) in
-                        offsets.forEach { offset in
-                            dispCardData[offset].deleteData(cardData: dispCardData[offset])
-                        }
-                        dispCardData.remove(atOffsets: offsets)
-                        let realm = try? Realm()
-                        if let data = realm?.objects(CardData.self) {
-                            dispCardData = makeArrayData(data: data)
+                        .onDelete { (offsets) in
+                            offsets.forEach { offset in
+                                dispCardData[offset].deleteData(cardData: dispCardData[offset])
+                            }
+                            dispCardData.remove(atOffsets: offsets)
+                            let realm = try? Realm()
+                            if let data = realm?.objects(CardData.self) {
+                                dispCardData = makeArrayData(data: data)
+                            }
                         }
                     }
                 }
@@ -103,6 +151,7 @@ struct CardListView: View {
                 }
             }
             .onAppear {
+                fetchNews()
                 UIApplication.shared.endEditing()
                 isFloatingButtonHidden = false
                 let realm = try? Realm()
@@ -121,6 +170,7 @@ struct CardListView: View {
                 searchText = ""
             }
         }
+        .listStyle(.plain)
     }
 }
 
@@ -141,6 +191,6 @@ struct PickOrder: View {
 
 struct CardListView_Previews: PreviewProvider {
     static var previews: some View {
-        CardListView(dispCardData: CardData.sampleData, searchText: "", cardData: CardData.sampleData[0])
+        CardListView(dispCardData: CardData.sampleData, searchText: "", cardData: CardData.sampleData[0], article: Article.init(title: "", url: ""))
     }
 }

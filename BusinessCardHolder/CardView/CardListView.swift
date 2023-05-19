@@ -15,8 +15,8 @@ struct CardListView: View {
     @State private var isShowingSafariView = false
     @State private var safariURL: URL? = nil
     @State private var currentNewsIndex = 0
+    @State private var isShowingNews = true
     @State private var selectedOrder = "new"
-    private let order = ["new", "old"]
     private let newsTimerInterval: TimeInterval = 5
     let cardData: CardData
     let article: Article
@@ -25,7 +25,6 @@ struct CardListView: View {
         article.getArticles { news in
             DispatchQueue.main.async {
                 self.news = news
-                print("title: \(news[0].title)")
             }
         }
     }
@@ -33,30 +32,33 @@ struct CardListView: View {
     func openSafariView(withURL url: URL) {
         safariURL = url
         isShowingSafariView = true
+        UIApplication.shared.open(url)
     }
     
     var newsView: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                ForEach(news, id: \.title) { article in
-                    Button(action: {
-                        if let url = URL(string: article.url) {
-                            UIApplication.shared.open(url)
+                ForEach(news.indices, id: \.self) { index in
+                    if index >= currentNewsIndex && index < currentNewsIndex + 3 {
+                        Button(action: {
+                            openSafariView(withURL: URL(string: news[index].url)!)
+                        }) {
+                            Text(news[index].title)
+                                .font(.subheadline)
+                                .foregroundColor(.black)
+                                .lineLimit(1)
+                                .padding(.vertical, 5)
+                                .padding(.horizontal, 10)
+                                .cornerRadius(10)
                         }
-                    }) {
-                        Text(article.title)
-                            .font(.subheadline)
-                            .foregroundColor(.black)
-                            .lineLimit(1)
-                            .padding(.vertical, 5)
-                            .padding(.horizontal, 10)
-                            .background(Color.white)
-                            .cornerRadius(10)
+                        .transition(.opacity)
+                        .id(index)
                     }
                 }
             }
             .padding(.horizontal)
             .frame(height: 40)
+            .background(Color.gray.opacity(0.1))
         }
     }
     
@@ -65,6 +67,11 @@ struct CardListView: View {
             ZStack {
                 VStack {
                     newsView
+                        .id(currentNewsIndex)
+                        .onAppear {
+                            startNewsTimer()
+                        }
+                    
                     List {
                         ForEach(dispCardData) { data in
                             HStack {
@@ -172,11 +179,19 @@ struct CardListView: View {
         }
         .listStyle(.plain)
     }
+    
+    private func startNewsTimer() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + newsTimerInterval) {
+            currentNewsIndex = (currentNewsIndex + 1) % news.count
+            startNewsTimer()
+        }
+    }
 }
 
 struct PickOrder: View {
     let order = ["new", "old"]
     @Binding var selectedOrder: String
+
     var body: some View {
         VStack {
             Picker("", selection: $selectedOrder) {

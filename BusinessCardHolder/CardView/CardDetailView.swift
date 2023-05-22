@@ -7,11 +7,9 @@ import SwiftUI
 import RealmSwift
 
 struct CardDetailView: View {
-    @State var dispCardData: CardData
     @Environment(\.presentationMode) var presentation
+    @State var dispCardData: CardData
     @State private var showAlert = false
-    @State private var didTapBackButton = true
-    @State private var image = UIImage()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -59,9 +57,6 @@ struct CardDetailView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 NavigationLink(destination: CardEditView(dispCardData: $dispCardData, isFloatingButton: false, cardData: dispCardData)
-                    .onAppear {
-                        didTapBackButton = false
-                    }
                     .onDisappear {
                         let realm = try? Realm()
                         if let data = realm?.objects(CardData.self).where({ $0.id == dispCardData.id }).first {

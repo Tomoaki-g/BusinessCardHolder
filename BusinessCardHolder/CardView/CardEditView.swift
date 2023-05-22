@@ -10,7 +10,6 @@ struct CardEditView: View {
     @Environment(\.presentationMode) var presentation
     @Environment(\.dismiss) var dismiss
     @Binding var dispCardData: CardData
-    @State private var selectedDate = Date()
     @State private var source: UIImagePickerController.SourceType = .photoLibrary
     @State private var isActive: Bool = false
     @State private var showDialog: Bool = false
@@ -67,7 +66,7 @@ struct CardEditView: View {
                     VStack(alignment: .leading) {
                         Text("Name: ")
                             .font(.title)
-                            .padding(EdgeInsets(top: 10, leading: 0, bottom: -3, trailing: 0))
+                            .padding(EdgeInsets(top: 10, leading: 0, bottom: -5, trailing: 0))
                         TextEditor(text: $dispCardData.name)
                             .font(.system(size: 30))
                             .padding(.all, 5)
@@ -90,7 +89,7 @@ struct CardEditView: View {
                     VStack(alignment: .leading) {
                         Text("Note: ")
                             .font(.title)
-                            .padding(EdgeInsets(top: 10, leading: 0, bottom: -3, trailing: 0))
+                            .padding(EdgeInsets(top: 10, leading: 0, bottom: -5, trailing: 0))
                         TextEditor(text: $dispCardData.note)
                             .font(.system(size: 30))
                             .padding(.all, 5)
@@ -122,8 +121,6 @@ struct CardEditView: View {
                     self.focus = false
                     
                     if dispCardData.name != "" {
-                        print("name: \(dispCardData.name)")
-                        print("$name: \($dispCardData.name)")
                         let result = cardData.saveData(id: dispCardData.id, name: dispCardData.name, image: UIImage(data: dispCardData.image), date: dispCardData.date, note: dispCardData.note)
                         if result {
                             self.presentation.wrappedValue.dismiss()

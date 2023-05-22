@@ -10,30 +10,13 @@ struct CardListView: View {
     @State var isFloatingButtonHidden = false
     @State var dispCardData: [CardData]
     @State var searchText: String
-    @State private var newImage = UIImage()
     @State private var news: [Article] = []
-    @State private var isShowingSafariView = false
     @State private var safariURL: URL? = nil
     @State private var currentNewsIndex = 0
-    @State private var isShowingNews = true
     @State private var selectedOrder = "new"
     private let newsTimerInterval: TimeInterval = 5
     let cardData: CardData
     let article: Article
-
-    func fetchNews() {
-        article.getArticles { news in
-            DispatchQueue.main.async {
-                self.news = news
-            }
-        }
-    }
-    
-    func openSafariView(withURL url: URL) {
-        safariURL = url
-        isShowingSafariView = true
-        UIApplication.shared.open(url)
-    }
     
     var newsView: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -41,7 +24,9 @@ struct CardListView: View {
                 ForEach(news.indices, id: \.self) { index in
                     if index >= currentNewsIndex && index < currentNewsIndex + 3 {
                         Button(action: {
-                            openSafariView(withURL: URL(string: news[index].url)!)
+                            if news[index].url != "" {
+                                UIApplication.shared.open(URL(string: news[index].url)!)
+                            }
                         }) {
                             Text(news[index].title)
                                 .font(.subheadline)
@@ -184,6 +169,14 @@ struct CardListView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + newsTimerInterval) {
             currentNewsIndex = (currentNewsIndex + 1) % news.count
             startNewsTimer()
+        }
+    }
+    
+    private func fetchNews() {
+        article.getArticles { news in
+            DispatchQueue.main.async {
+                self.news = news
+            }
         }
     }
 }

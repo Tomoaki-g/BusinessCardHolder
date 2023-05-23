@@ -13,6 +13,7 @@ struct CardListView: View {
     @State private var news: [Article] = []
     @State private var safariURL: URL? = nil
     @State private var currentNewsIndex = 0
+    @State private var isNewsTimerRunning = false
     @State private var selectedOrder = "new"
     private let newsTimerInterval: TimeInterval = 5
     let cardData: CardData
@@ -54,7 +55,11 @@ struct CardListView: View {
                     newsView
                         .id(currentNewsIndex)
                         .onAppear {
+                            isNewsTimerRunning = true
                             startNewsTimer()
+                        }
+                        .onDisappear {
+                            stopNewsTimer()
                         }
                     
                     List {
@@ -167,9 +172,15 @@ struct CardListView: View {
     
     private func startNewsTimer() {
         DispatchQueue.main.asyncAfter(deadline: .now() + newsTimerInterval) {
-            currentNewsIndex = (currentNewsIndex + 1) % news.count
-            startNewsTimer()
+            if isNewsTimerRunning {
+                currentNewsIndex = (currentNewsIndex + 1) % news.count
+                startNewsTimer()
+            }
         }
+    }
+
+    private func stopNewsTimer() {
+        isNewsTimerRunning = false
     }
     
     private func fetchNews() {

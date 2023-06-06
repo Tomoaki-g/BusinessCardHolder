@@ -3,10 +3,9 @@
 //  BusinessCardHolder
 //
 
-//import SwiftUI
 import RealmSwift
 
-class CardData: Object, Identifiable {
+class CardData: Object, Identifiable, Codable {
     @Persisted(primaryKey: true) var id: String = UUID().uuidString
     @Persisted var name: String
     @Persisted var image: Data

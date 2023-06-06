@@ -23,6 +23,7 @@
 		517D64A1297559F900E0747A /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D64A0297559F900E0747A /* CardListView.swift */; };
 		517D64A329755BE400E0747A /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D64A229755BE400E0747A /* CardDetailView.swift */; };
 		517D64A529755D0800E0747A /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D64A429755D0800E0747A /* CardData.swift */; };
+		51F18C842A274D0800F8938A /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F18C832A274D0800F8938A /* QRCodeGenerator.swift */; };
 		9849E6F45A4205503BA7E000 /* Pods_BusinessCardHolder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A507ED6659C1E5AFD2F6F3 /* Pods_BusinessCardHolder.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		517D64A0297559F900E0747A /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		517D64A229755BE400E0747A /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		517D64A429755D0800E0747A /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		51F18C832A274D0800F8938A /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		C874B52BFA62EA7AE2176454 /* Pods-BusinessCardHolder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessCardHolder.release.xcconfig"; path = "Target Support Files/Pods-BusinessCardHolder/Pods-BusinessCardHolder.release.xcconfig"; sourceTree = "<group>"; };
 		F6A507ED6659C1E5AFD2F6F3 /* Pods_BusinessCardHolder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessCardHolder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				517D649E2975598100E0747A /* LaunchView.swift */,
 				51768C3C29795394005660AE /* FloatingButton.swift */,
 				5172A67529EFC65D00F3E98B /* SearchView.swift */,
+				51F18C832A274D0800F8938A /* QRCodeGenerator.swift */,
 				51004CB0297A9023001CEA6C /* CameraView.swift */,
 				51649C2429768F9A00E2FEEE /* CardView */,
 				517D6496297547C600E0747A /* Preview Content */,
@@ -269,6 +272,7 @@
 				517D64A529755D0800E0747A /* CardData.swift in Sources */,
 				5172A67629EFC65D00F3E98B /* SearchView.swift in Sources */,
 				51004CB1297A9023001CEA6C /* CameraView.swift in Sources */,
+				51F18C842A274D0800F8938A /* QRCodeGenerator.swift in Sources */,
 				517D64A1297559F900E0747A /* CardListView.swift in Sources */,
 				517D6491297547C100E0747A /* BusinessCardHolderApp.swift in Sources */,
 				51768C3B2978F550005660AE /* CardEditData.swift in Sources */,

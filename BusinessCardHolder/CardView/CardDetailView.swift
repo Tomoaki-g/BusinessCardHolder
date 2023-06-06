@@ -10,6 +10,9 @@ struct CardDetailView: View {
     @Environment(\.presentationMode) var presentation
     @State var dispCardData: CardData
     @State private var showAlert = false
+    @State private var showActivityView = false
+    @State private var qrCodeImage: UIImage?
+    private let qrCodeGenerator = QRCodeGenerator()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -25,7 +28,7 @@ struct CardDetailView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-
+            
             Divider()
             
             ScrollView(.vertical, showsIndicators: false) {
@@ -35,13 +38,13 @@ struct CardDetailView: View {
                     Text(dispCardData.name)
                         .font(.largeTitle)
                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 0))
-
+                    
                     Text("Date: ")
                         .font(.title)
                     Text(dateToString(date: dispCardData.date))
                         .font(.largeTitle)
                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 0))
-
+                    
                     Text("Note: ")
                         .font(.title)
                     Text(dispCardData.note)
@@ -70,7 +73,35 @@ struct CardDetailView: View {
         }
         .safeAreaInset(edge: .bottom) {
             HStack {
+                Button(action: {
+                    self.showActivityView = true
+                }) {
+                    Image(systemName: "qrcode")
+                        .font(.title2)
+                        .foregroundColor(.blue)
+                        .scaleEffect(x: 1.4, y: 1.4)
+                }
+                .fullScreenCover(isPresented: $showActivityView) {
+                    if let qrCodeImage {
+                        ZStack {
+                            Color.black.opacity(0.3)
+                                .backgroundClearSheet()
+                                .edgesIgnoringSafeArea(.all)
+                            
+                            Image(uiImage: qrCodeImage)
+                                .resizable()
+                                .frame(width: 200, height: 200)
+                        }
+                        .onTapGesture {
+                            showActivityView = false
+                        }
+                    }
+                }
+                .padding(EdgeInsets(top: 0, leading: 30, bottom: 15, trailing: 0))
+
+                
                 Spacer()
+                
                 Button(action: {
                     self.showAlert = true
                 }) {
@@ -88,11 +119,31 @@ struct CardDetailView: View {
                 } message: {
                     Text("Are you sure you want to delete this card?")
                 }
+                
             }
         }
         .onAppear {
             UIApplication.shared.endEditing()
+            qrCodeImage = qrCodeGenerator.generate(with: dispCardData)
         }
+    }
+}
+
+struct BackgroundClearView: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
+        Task {
+            view.superview?.superview?.backgroundColor = .clear
+        }
+        return view
+    }
+
+    func updateUIView(_ uiView: UIView, context: Context) {}
+}
+
+extension View {
+    func backgroundClearSheet() -> some View {
+        background(BackgroundClearView())
     }
 }
 

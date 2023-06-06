@@ -172,7 +172,7 @@ struct CardListView: View {
     
     private func startNewsTimer() {
         DispatchQueue.main.asyncAfter(deadline: .now() + newsTimerInterval) {
-            if isNewsTimerRunning {
+            if isNewsTimerRunning && news.count != 0 {
                 currentNewsIndex = (currentNewsIndex + 1) % news.count
                 startNewsTimer()
             }

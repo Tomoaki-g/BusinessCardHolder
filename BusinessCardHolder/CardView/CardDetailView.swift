@@ -84,13 +84,21 @@ struct CardDetailView: View {
                 .fullScreenCover(isPresented: $showActivityView) {
                     if let qrCodeImage {
                         ZStack {
-                            Color.black.opacity(0.3)
+                            Color.black.opacity(0.4)
                                 .backgroundClearSheet()
                                 .edgesIgnoringSafeArea(.all)
                             
-                            Image(uiImage: qrCodeImage)
-                                .resizable()
-                                .frame(width: 200, height: 200)
+                            VStack(alignment: .center) {
+                                Text("共有用QRコード")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .shadow(color: .gray,radius: 3, x: 2, y: 2)
+                                
+                                Image(uiImage: qrCodeImage)
+                                    .resizable()
+                                    .frame(width: 200, height: 200)
+                            }
                         }
                         .onTapGesture {
                             showActivityView = false

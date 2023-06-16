@@ -10,8 +10,10 @@ struct CardEditView: View {
     @Environment(\.presentationMode) var presentation
     @Environment(\.dismiss) var dismiss
     @Binding var dispCardData: CardData
+    @State private var qrCodeData: String = ""
     @State private var source: UIImagePickerController.SourceType = .photoLibrary
-    @State private var isActive: Bool = false
+    @State private var isCameraActive: Bool = false
+    @State private var isScanActive: Bool = false
     @State private var showDialog: Bool = false
     @State var isFloatingButton: Bool
     @FocusState var focus: Bool
@@ -37,27 +39,42 @@ struct CardEditView: View {
                 Spacer()
                 Button(action: {
                     self.source = .photoLibrary
-                    self.isActive = true
+                    self.isCameraActive = true
                 }, label: {
                     Text("Upload")
-                        .font(.title2)
+                        .font(.title3)
                 })
-                .sheet(isPresented: $isActive, content: {
-                    CameraView(image: $dispCardData.image, sourceType: $source, isActive: $isActive)
+                .sheet(isPresented: $isCameraActive, content: {
+                    CameraView(image: $dispCardData.image, sourceType: $source, isCameraActive: $isCameraActive)
+                        .edgesIgnoringSafeArea(.all)
                 })
+
                 Spacer()
                 
                 Button(action: {
                     self.source = .camera
-                    self.isActive = true
+                    self.isCameraActive = true
                 }, label: {
                     Text("Take Photo")
-                        .font(.title2)
+                        .font(.title3)
                 })
-                .sheet(isPresented: $isActive, content: {
-                    CameraView(image: $dispCardData.image, sourceType: $source, isActive: $isActive)
+                .sheet(isPresented: $isCameraActive, content: {
+                    CameraView(image: $dispCardData.image, sourceType: $source, isCameraActive: $isCameraActive)
+                        .edgesIgnoringSafeArea(.all)
                 })
+
                 Spacer()
+
+                Button(action: {
+                    self.source = .camera
+                    self.isScanActive = true
+                }, label: {
+                    Text("Read QR code")
+                        .font(.title3)
+                })
+                .sheet(isPresented: $isScanActive, content: {
+                    ScannerView(isScanActive: $isScanActive, qrCodeData: $qrCodeData)
+                })
             }
             .padding(.bottom, 10)
             

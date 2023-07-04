@@ -7,11 +7,9 @@ import SwiftUI
 import UIKit
 
 struct QRCodeGenerator {
-    let fileName = "cardData"
-    
     func generate(with inputCardData: CardData) -> UIImage? {
         guard let qrFilter = CIFilter(name: "CIQRCodeGenerator",
-                                      parameters: ["inputMessage": fileName.data(using: .utf8)!,
+                                      parameters: ["inputMessage": ("\(FirebaseStorage.shared.fileName)_\(inputCardData.id)").data(using: .utf8)!,
                                                    "inputCorrectionLevel": "H"])
         else { return nil }
         

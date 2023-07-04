@@ -5,8 +5,6 @@
 
 import SwiftUI
 import RealmSwift
-import Firebase
-import FirebaseStorage
 
 struct CardDetailView: View {
     @Environment(\.presentationMode) var presentation
@@ -95,7 +93,7 @@ struct CardDetailView: View {
                                     .font(.title)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
-                                    .shadow(color: .gray,radius: 3, x: 2, y: 2)
+                                    .shadow(color: .black, radius: 3, x: 2, y: 2)
                                 
                                 Image(uiImage: qrCodeImage)
                                     .resizable()
@@ -106,10 +104,10 @@ struct CardDetailView: View {
                             showActivityView = false
                         }
                         .onAppear {
-                            firebaseUpload(data: dispCardData)
+                            FirebaseStorage.shared.uploadData(data: dispCardData)
                         }
                         .onDisappear {
-                            deleteStorageData()
+                            FirebaseStorage.shared.deleteData(data: dispCardData)
                         }
                     }
                 }
@@ -141,30 +139,6 @@ struct CardDetailView: View {
         .onAppear {
             UIApplication.shared.endEditing()
             qrCodeImage = qrCodeGenerator.generate(with: dispCardData)
-        }
-    }
-    
-    func firebaseUpload(data: CardData) {
-        let storageRef = Storage.storage().reference()
-        let txtRef = storageRef.child("cardData.txt")
-        if let inputData = convertToString(data: data).data(using: .utf8) {
-            txtRef.putData(inputData, metadata: nil, completion: { (metadata, error) in
-                if error != nil {
-                    print(error as Any)
-                } else {
-                    print(metadata!.path!)
-                }
-            })
-        }
-    }
-    
-    func deleteStorageData() {
-        let storageRef = Storage.storage().reference()
-        let imageRef = storageRef.child("cardData.txt")
-        imageRef.delete { error in
-            if let error = error {
-                print(error)
-            }
         }
     }
 }

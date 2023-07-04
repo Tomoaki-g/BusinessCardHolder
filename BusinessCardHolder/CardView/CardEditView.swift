@@ -5,8 +5,6 @@
 
 import SwiftUI
 import Combine
-import Foundation
-import FirebaseStorage
 
 struct CardEditView: View {
     @Environment(\.presentationMode) var presentation
@@ -21,7 +19,6 @@ struct CardEditView: View {
     @FocusState var nameFocus: Bool
     @FocusState var noteFocus: Bool
     let cardData: CardData
-    private let qrCodeGenerator = QRCodeGenerator()
 
     var body: some View {
         VStack {
@@ -187,36 +184,26 @@ struct CardEditView: View {
     }
     
     private func parseData(qrCodeData: String) {
-        let storageRef = Storage.storage().reference()
-        let imageRef = storageRef.child("cardData.txt")
-        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                print(error)
-            } else {
-                print(data as Any)
-                if let data = data {
-                    let dataValue = String(data: data, encoding: .utf8)!
-                    let components = dataValue.components(separatedBy: ",")
-                    if components.count == 5 {
-                        let id = components[0]
-                        let name = components[1]
-                        let imageString = components[2]
-                        let image = Data(base64Encoded: imageString)
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-                        let date = dateFormatter.date(from: components[3])
-                        let note = components[4]
-                        
-                        if let image = image, let date = date {
-                            dispCardData.id = id
-                            dispCardData.name = name
-                            dispCardData.image = image
-                            dispCardData.date = date
-                            dispCardData.note = note
-
-                            self.nameFocus = true
-                        }
-                    }
+        FirebaseStorage.shared.downloadData(qrCodeData: qrCodeData) { dataValue in
+            let components = dataValue.components(separatedBy: ",")
+            if components.count == 5 {
+                let id = components[0]
+                let name = components[1]
+                let imageString = components[2]
+                let image = Data(base64Encoded: imageString)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+                let date = dateFormatter.date(from: components[3])
+                let note = components[4]
+                
+                if let image = image, let date = date {
+                    dispCardData.id = id
+                    dispCardData.name = name
+                    dispCardData.image = image
+                    dispCardData.date = date
+                    dispCardData.note = note
+                    
+                    self.nameFocus = true
                 }
             }
         }

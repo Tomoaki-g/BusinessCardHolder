@@ -12,7 +12,6 @@ struct ScannerView: UIViewRepresentable {
     @Binding var qrCodeData: String
     
     let session = AVCaptureSession()
-    let sessionQueue = DispatchQueue(label: "sessionQueue")
     let preview = UIView(frame: .init(origin: .zero, size: UIScreen.main.bounds.size))
 
     func makeCoordinator() -> ScannerView.Coordinator {
@@ -21,7 +20,7 @@ struct ScannerView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UIView {
         if !session.isRunning {
-            DispatchQueue.main.async {
+            DispatchQueue.global(qos: .background).async {
                 self.session.startRunning()
             }
         }

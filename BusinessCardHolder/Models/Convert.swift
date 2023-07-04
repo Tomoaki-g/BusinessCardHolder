@@ -32,6 +32,11 @@ func stringToImage(imageString: String) -> UIImage? {
     return UIImage(data: imageData)
 }
 
+func convertToString(data: CardData) -> String {
+    let dataString = "\(data.id),\(data.name),\(data.image.base64EncodedString()),\(data.date),\(data.note)"
+    return dataString
+}
+
 extension String {
     func removingWhiteSpace() -> String {
         let whiteSpaces: CharacterSet = [" ", "　"]

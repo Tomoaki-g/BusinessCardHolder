@@ -8,5 +8,9 @@ target 'BusinessCardHolder' do
   # Pods for BusinessCardHolder
   pod 'RealmSwift'
   pod 'KeyboardObserving'
-
+  pod 'Firebase'
+  pod 'FirebaseUI'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 end

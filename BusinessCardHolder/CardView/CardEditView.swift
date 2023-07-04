@@ -5,6 +5,8 @@
 
 import SwiftUI
 import Combine
+import Foundation
+import FirebaseStorage
 
 struct CardEditView: View {
     @Environment(\.presentationMode) var presentation
@@ -16,8 +18,10 @@ struct CardEditView: View {
     @State private var isScanActive: Bool = false
     @State private var showDialog: Bool = false
     @State var isFloatingButton: Bool
-    @FocusState var focus: Bool
+    @FocusState var nameFocus: Bool
+    @FocusState var noteFocus: Bool
     let cardData: CardData
+    private let qrCodeGenerator = QRCodeGenerator()
 
     var body: some View {
         VStack {
@@ -74,7 +78,14 @@ struct CardEditView: View {
                 })
                 .sheet(isPresented: $isScanActive, content: {
                     ScannerView(isScanActive: $isScanActive, qrCodeData: $qrCodeData)
+                        .onDisappear {
+                            if qrCodeData != "" {
+                                parseData(qrCodeData: qrCodeData)
+                            }
+                        }
                 })
+                
+                Spacer()
             }
             .padding(.bottom, 10)
             
@@ -89,7 +100,7 @@ struct CardEditView: View {
                             .padding(.all, 5)
                             .border(Color.gray, width: 1)
                             .frame(height: 50)
-                            .focused(self.$focus)
+                            .focused(self.$nameFocus)
                     }
 
                     VStack(alignment: .leading) {
@@ -112,7 +123,7 @@ struct CardEditView: View {
                             .padding(.all, 5)
                             .border(Color.gray, width: 1)
                             .frame(minHeight: 200)
-                            .focused(self.$focus)
+                            .focused(self.$noteFocus)
                     }
                 }
                 .toolbar {
@@ -122,7 +133,8 @@ struct CardEditView: View {
                     ToolbarItem(placement: .keyboard) {
                         Button("Done") {
                             UIApplication.shared.endEditing()
-                            self.focus = false
+                            self.nameFocus = false
+                            self.noteFocus = false
                         }
                     }
                 }
@@ -135,8 +147,9 @@ struct CardEditView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
                     UIApplication.shared.endEditing()
-                    self.focus = false
-                    
+                    self.nameFocus = false
+                    self.noteFocus = false
+
                     if dispCardData.name != "" {
                         let result = cardData.saveData(id: dispCardData.id, name: dispCardData.name, image: UIImage(data: dispCardData.image), date: dispCardData.date, note: dispCardData.note)
                         if result {
@@ -169,6 +182,42 @@ struct CardEditView: View {
                 dispCardData.image = UIImage(named: "noimage")!.jpegData(compressionQuality: 1.0)!
                 dispCardData.date = Date()
                 dispCardData.note = ""
+            }
+        }
+    }
+    
+    private func parseData(qrCodeData: String) {
+        let storageRef = Storage.storage().reference()
+        let imageRef = storageRef.child("cardData.txt")
+        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                print(error)
+            } else {
+                print(data as Any)
+                if let data = data {
+                    let dataValue = String(data: data, encoding: .utf8)!
+                    let components = dataValue.components(separatedBy: ",")
+                    if components.count == 5 {
+                        let id = components[0]
+                        let name = components[1]
+                        let imageString = components[2]
+                        let image = Data(base64Encoded: imageString)
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+                        let date = dateFormatter.date(from: components[3])
+                        let note = components[4]
+                        
+                        if let image = image, let date = date {
+                            dispCardData.id = id
+                            dispCardData.name = name
+                            dispCardData.image = image
+                            dispCardData.date = date
+                            dispCardData.note = note
+
+                            self.nameFocus = true
+                        }
+                    }
+                }
             }
         }
     }

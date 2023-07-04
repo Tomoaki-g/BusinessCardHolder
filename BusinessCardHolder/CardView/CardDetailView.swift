@@ -5,6 +5,8 @@
 
 import SwiftUI
 import RealmSwift
+import Firebase
+import FirebaseStorage
 
 struct CardDetailView: View {
     @Environment(\.presentationMode) var presentation
@@ -103,6 +105,12 @@ struct CardDetailView: View {
                         .onTapGesture {
                             showActivityView = false
                         }
+                        .onAppear {
+                            firebaseUpload(data: dispCardData)
+                        }
+                        .onDisappear {
+                            deleteStorageData()
+                        }
                     }
                 }
                 .padding(EdgeInsets(top: 0, leading: 30, bottom: 15, trailing: 0))
@@ -133,6 +141,30 @@ struct CardDetailView: View {
         .onAppear {
             UIApplication.shared.endEditing()
             qrCodeImage = qrCodeGenerator.generate(with: dispCardData)
+        }
+    }
+    
+    func firebaseUpload(data: CardData) {
+        let storageRef = Storage.storage().reference()
+        let txtRef = storageRef.child("cardData.txt")
+        if let inputData = convertToString(data: data).data(using: .utf8) {
+            txtRef.putData(inputData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error as Any)
+                } else {
+                    print(metadata!.path!)
+                }
+            })
+        }
+    }
+    
+    func deleteStorageData() {
+        let storageRef = Storage.storage().reference()
+        let imageRef = storageRef.child("cardData.txt")
+        imageRef.delete { error in
+            if let error = error {
+                print(error)
+            }
         }
     }
 }

@@ -9,8 +9,11 @@ import RealmSwift
 struct CardDetailView: View {
     @Environment(\.presentationMode) var presentation
     @State var dispCardData: CardData
+    @State var progressViewOpacity: Double = 1.0
+    @State var qrcodeOpacity: Double = 0.0
     @State private var showAlert = false
     @State private var showActivityView = false
+    @State private var showLoadView = false
     @State private var qrCodeImage: UIImage?
     private let qrCodeGenerator = QRCodeGenerator()
 
@@ -74,40 +77,64 @@ struct CardDetailView: View {
         .safeAreaInset(edge: .bottom) {
             HStack {
                 Button(action: {
-                    self.showActivityView = true
+                    self.showLoadView = true
+                    FirebaseStorage.shared.uploadData(data: dispCardData) { result in
+                        if result {
+                            self.showActivityView = true
+                        }
+                        self.showLoadView = false
+                    }
                 }) {
                     Image(systemName: "qrcode")
                         .font(.title2)
                         .foregroundColor(.blue)
                         .scaleEffect(x: 1.4, y: 1.4)
                 }
+                .fullScreenCover(isPresented: $showLoadView) {
+                    ZStack {
+                        Color.black.opacity(0.6)
+                            .backgroundClearSheet()
+                            .edgesIgnoringSafeArea(.all)
+                        
+                        ProgressView("Preparing QR code")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .scaleEffect(x: 1.2, y: 1.2)
+                            .shadow(color: .black, radius: 3, x: 2, y: 2)
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                            .opacity(self.progressViewOpacity)
+                    }
+                    .onDisappear {
+                        withAnimation(.linear(duration: 0.3)) {
+                            self.progressViewOpacity = 0.0
+                        }
+                    }
+                }
                 .fullScreenCover(isPresented: $showActivityView) {
                     if let qrCodeImage {
                         ZStack {
-                            Color.black.opacity(0.4)
+                            Color.black.opacity(0.6)
                                 .backgroundClearSheet()
                                 .edgesIgnoringSafeArea(.all)
                             
                             VStack(alignment: .center) {
-                                Text("共有用QRコード")
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .shadow(color: .black, radius: 3, x: 2, y: 2)
-                                
                                 Image(uiImage: qrCodeImage)
                                     .resizable()
                                     .frame(width: 200, height: 200)
                             }
+                            .opacity(self.qrcodeOpacity)
                         }
                         .onTapGesture {
                             showActivityView = false
                         }
                         .onAppear {
-                            FirebaseStorage.shared.uploadData(data: dispCardData)
+                            withAnimation(.linear(duration: 0.3)) {
+                                self.qrcodeOpacity = 1.0
+                            }
                         }
                         .onDisappear {
                             FirebaseStorage.shared.deleteData(data: dispCardData)
+                            self.progressViewOpacity = 1.0
                         }
                     }
                 }

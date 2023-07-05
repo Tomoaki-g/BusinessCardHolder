@@ -12,15 +12,17 @@ final public class FirebaseStorage {
 
     private init() {}
         
-    func uploadData(data: CardData) {
+    func uploadData(data: CardData, completion: @escaping (Bool) -> Void) {
         let storageRef = Storage.storage().reference()
         let txtRef = storageRef.child("\(fileName)_\(data.id).txt")
         if let inputData = convertToString(data: data).data(using: .utf8) {
             txtRef.putData(inputData, metadata: nil, completion: { (metadata, error) in
                 if error != nil {
                     print(error as Any)
+                    completion(false)
                 } else {
                     print(metadata!.path!)
+                    completion(true)
                 }
             })
         }

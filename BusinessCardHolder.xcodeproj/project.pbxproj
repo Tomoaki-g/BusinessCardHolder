@@ -10,11 +10,13 @@
 		51004CB1297A9023001CEA6C /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51004CB0297A9023001CEA6C /* CameraView.swift */; };
 		5141D8FC299A14A500A46C23 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141D8FB299A14A500A46C23 /* Keyboard.swift */; };
 		5141D8FE299A150900A46C23 /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5141D8FD299A150900A46C23 /* Convert.swift */; };
+		51519D952A4E7A58002582D9 /* Pods_BusinessCardHolder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51519D942A4E7A58002582D9 /* Pods_BusinessCardHolder.framework */; };
 		515634432A1390E40089563F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515634422A1390E40089563F /* Article.swift */; };
 		51649C232976893600E2FEEE /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51649C222976893600E2FEEE /* CardEditView.swift */; };
 		5172A67629EFC65D00F3E98B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5172A67529EFC65D00F3E98B /* SearchView.swift */; };
 		51768C3B2978F550005660AE /* CardEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51768C3A2978F54F005660AE /* CardEditData.swift */; };
 		51768C3D29795394005660AE /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51768C3C29795394005660AE /* FloatingButton.swift */; };
+		5179BD2C2A37283A00A7F830 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179BD2B2A37283A00A7F830 /* ScannerView.swift */; };
 		517D6491297547C100E0747A /* BusinessCardHolderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D6490297547C100E0747A /* BusinessCardHolderApp.swift */; };
 		517D6493297547C100E0747A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D6492297547C100E0747A /* ContentView.swift */; };
 		517D6495297547C600E0747A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 517D6494297547C600E0747A /* Assets.xcassets */; };
@@ -23,8 +25,9 @@
 		517D64A1297559F900E0747A /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D64A0297559F900E0747A /* CardListView.swift */; };
 		517D64A329755BE400E0747A /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D64A229755BE400E0747A /* CardDetailView.swift */; };
 		517D64A529755D0800E0747A /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D64A429755D0800E0747A /* CardData.swift */; };
+		51CE6F062A53B7F6002047A2 /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CE6F052A53B7F6002047A2 /* FirebaseStorage.swift */; };
 		51F18C842A274D0800F8938A /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F18C832A274D0800F8938A /* QRCodeGenerator.swift */; };
-		9849E6F45A4205503BA7E000 /* Pods_BusinessCardHolder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A507ED6659C1E5AFD2F6F3 /* Pods_BusinessCardHolder.framework */; };
+		51F6086C2A4D827F009A3DB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51F6086B2A4D827F009A3DB3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +36,13 @@
 		51301E3129AF389500456B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5141D8FB299A14A500A46C23 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		5141D8FD299A150900A46C23 /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
+		51519D942A4E7A58002582D9 /* Pods_BusinessCardHolder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_BusinessCardHolder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		515634422A1390E40089563F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		51649C222976893600E2FEEE /* CardEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditView.swift; sourceTree = "<group>"; };
 		5172A67529EFC65D00F3E98B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		51768C3A2978F54F005660AE /* CardEditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditData.swift; sourceTree = "<group>"; };
 		51768C3C29795394005660AE /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		5179BD2B2A37283A00A7F830 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		517D648D297547C100E0747A /* BusinessCardHolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCardHolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		517D6490297547C100E0747A /* BusinessCardHolderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCardHolderApp.swift; sourceTree = "<group>"; };
 		517D6492297547C100E0747A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,9 +52,11 @@
 		517D64A0297559F900E0747A /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		517D64A229755BE400E0747A /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		517D64A429755D0800E0747A /* CardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
+		51CE6F052A53B7F6002047A2 /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		51F18C832A274D0800F8938A /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
+		51F6086B2A4D827F009A3DB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		51FA3B302A4E9C28002D7F2B /* BusinessCardHolder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BusinessCardHolder.entitlements; sourceTree = "<group>"; };
 		C874B52BFA62EA7AE2176454 /* Pods-BusinessCardHolder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessCardHolder.release.xcconfig"; path = "Target Support Files/Pods-BusinessCardHolder/Pods-BusinessCardHolder.release.xcconfig"; sourceTree = "<group>"; };
-		F6A507ED6659C1E5AFD2F6F3 /* Pods_BusinessCardHolder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessCardHolder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9849E6F45A4205503BA7E000 /* Pods_BusinessCardHolder.framework in Frameworks */,
+				51519D952A4E7A58002582D9 /* Pods_BusinessCardHolder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +74,7 @@
 		30197437C6729BF295966A8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F6A507ED6659C1E5AFD2F6F3 /* Pods_BusinessCardHolder.framework */,
+				51519D942A4E7A58002582D9 /* Pods_BusinessCardHolder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -94,6 +101,16 @@
 			path = CardView;
 			sourceTree = "<group>";
 		};
+		5179BD2D2A3729C700A7F830 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				5179BD2B2A37283A00A7F830 /* ScannerView.swift */,
+				51F18C832A274D0800F8938A /* QRCodeGenerator.swift */,
+				51004CB0297A9023001CEA6C /* CameraView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		517D6484297547C100E0747A = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +132,8 @@
 		517D648F297547C100E0747A /* BusinessCardHolder */ = {
 			isa = PBXGroup;
 			children = (
+				51FA3B302A4E9C28002D7F2B /* BusinessCardHolder.entitlements */,
+				51F6086B2A4D827F009A3DB3 /* GoogleService-Info.plist */,
 				51301E3129AF389500456B8F /* Info.plist */,
 				51649C21297688F800E2FEEE /* Models */,
 				517D6490297547C100E0747A /* BusinessCardHolderApp.swift */,
@@ -123,8 +142,8 @@
 				517D649E2975598100E0747A /* LaunchView.swift */,
 				51768C3C29795394005660AE /* FloatingButton.swift */,
 				5172A67529EFC65D00F3E98B /* SearchView.swift */,
-				51F18C832A274D0800F8938A /* QRCodeGenerator.swift */,
-				51004CB0297A9023001CEA6C /* CameraView.swift */,
+				51CE6F052A53B7F6002047A2 /* FirebaseStorage.swift */,
+				5179BD2D2A3729C700A7F830 /* Camera */,
 				51649C2429768F9A00E2FEEE /* CardView */,
 				517D6496297547C600E0747A /* Preview Content */,
 			);
@@ -166,6 +185,8 @@
 			dependencies = (
 			);
 			name = BusinessCardHolder;
+			packageProductDependencies = (
+			);
 			productName = BusinessCardHolder;
 			productReference = 517D648D297547C100E0747A /* BusinessCardHolder.app */;
 			productType = "com.apple.product-type.application";
@@ -194,6 +215,8 @@
 				Base,
 			);
 			mainGroup = 517D6484297547C100E0747A;
+			packageReferences = (
+			);
 			productRefGroup = 517D648E297547C100E0747A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -209,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				517D6498297547C600E0747A /* Preview Assets.xcassets in Resources */,
+				51F6086C2A4D827F009A3DB3 /* GoogleService-Info.plist in Resources */,
 				517D6495297547C600E0747A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +289,7 @@
 				517D6493297547C100E0747A /* ContentView.swift in Sources */,
 				5141D8FE299A150900A46C23 /* Convert.swift in Sources */,
 				51649C232976893600E2FEEE /* CardEditView.swift in Sources */,
+				5179BD2C2A37283A00A7F830 /* ScannerView.swift in Sources */,
 				51768C3D29795394005660AE /* FloatingButton.swift in Sources */,
 				517D649F2975598100E0747A /* LaunchView.swift in Sources */,
 				5141D8FC299A14A500A46C23 /* Keyboard.swift in Sources */,
@@ -275,6 +300,7 @@
 				51F18C842A274D0800F8938A /* QRCodeGenerator.swift in Sources */,
 				517D64A1297559F900E0747A /* CardListView.swift in Sources */,
 				517D6491297547C100E0747A /* BusinessCardHolderApp.swift in Sources */,
+				51CE6F062A53B7F6002047A2 /* FirebaseStorage.swift in Sources */,
 				51768C3B2978F550005660AE /* CardEditData.swift in Sources */,
 				515634432A1390E40089563F /* Article.swift in Sources */,
 			);
@@ -319,6 +345,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -403,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BusinessCardHolder/BusinessCardHolder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BusinessCardHolder/Preview Content\"";
@@ -410,7 +438,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BusinessCardHolder/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "カメラにアクセスしますか？";
+				INFOPLIST_KEY_NSCameraUsageDescription = "BusinessCardHolder requires access to your phone’s camera.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "カメラロールにアクセスしますか？";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -436,6 +464,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BusinessCardHolder/BusinessCardHolder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BusinessCardHolder/Preview Content\"";
@@ -443,7 +472,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BusinessCardHolder/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "カメラにアクセスしますか？";
+				INFOPLIST_KEY_NSCameraUsageDescription = "BusinessCardHolder requires access to your phone’s camera.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "カメラロールにアクセスしますか？";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
